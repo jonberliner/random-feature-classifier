@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "random-feature-classifier"
+version = "0.1.0"
+description = "CIFAR-10 experiments with seeded fixed-feature ResNet backbones."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch",
+  "torchvision",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+]
+analysis = [
+  "matplotlib",
+  "umap-learn",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
